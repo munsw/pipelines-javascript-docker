@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: munswpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: munswpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: munswpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: munswpipelinesjavascriptdocker 
+          image: kmuncregistry.azurecr.io/munswpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
